@@ -1,3 +1,2 @@
 literally generates girlfriends for you
-written in C#
-by fear#0007
+works most of the time lol
