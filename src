@@ -1,0 +1,65 @@
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+/* Written in C# - compiled with VS2022 */
+
+namespace GFGen
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string title = @"
+  ██████╗ ███████╗     ██████╗ ███████╗███╗   ██╗███████╗██████╗  █████╗ ████████╗ ██████╗ ██████╗ 
+ ██╔════╝ ██╔════╝    ██╔════╝ ██╔════╝████╗  ██║██╔════╝██╔══██╗██╔══██╗╚══██╔══╝██╔═══██╗██╔══██╗
+ ██║  ███╗█████╗      ██║  ███╗█████╗  ██╔██╗ ██║█████╗  ██████╔╝███████║   ██║   ██║   ██║██████╔╝
+ ██║   ██║██╔══╝      ██║   ██║██╔══╝  ██║╚██╗██║██╔══╝  ██╔══██╗██╔══██║   ██║   ██║   ██║██╔══██╗
+ ╚██████╔╝██║         ╚██████╔╝███████╗██║ ╚████║███████╗██║  ██║██║  ██║   ██║   ╚██████╔╝██║  ██║
+  ╚═════╝ ╚═╝          ╚═════╝ ╚══════╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝    ╚═════╝ ╚═╝  ╚═╝                                                                                 
+";
+            string[] names = { "Abigail", "Ariana ", "Alexandra", "Adriana", "Addison", "Betty", "Bella", "Bertha", "Britney", "Brianna", "Caitlin", "Carly", "Caroline", "Crystal", "Courtney", "Daisy", "Darcy", "Dixie", "Denise", "Elisha", "Evie", "Elizabeth", "Ella", "Emma", "Felisha", "Franky", "Fatima", "Fiona", "Fanny", "Gabby", "Gabriela", "Gwen", "Grace", "Georgia", "Hailey", "Harmony", "Hannah", "Heather", "Holly", "Imogen", "Isabelle", "Ivy", "Isla", "Isabella", "Jennifer", "Jaquelyn", "Jasmine", "Jemima", "Josie", "Kamilla", "Kacey", "Kaitlyn", "Kylie", "Kim", "Lorena", "Libby", "Layla", "Liana", "Leah", "Maddie", "Mabel", "May", "Melissa", "Marcella", "Natalie", "Nicola", "Nora", "Nicky", "Nia", "Olivia", "Ophelia", "Opal", "October", "Olla", "Penelope", "Piper", "Phoebe", "Paige", "Poppy", "Quinn", "Riley", "Rose", "Roxy", "Rachel", "Rebecca", "Sophie", "Sarah", "Scarlett", "Summer", "Sienna", "Taylor", "Trinity", "Tessa", "Tara", "Tiffany", "Violet", "Vanessa", "Victoria", "Valerie", "Willow", "Wynter", "Yasmine", "Zoey", "Zara", };
+            Console.Title = "Girlfriend Generator";
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine(title);
+            Console.WriteLine("Made by fear#0007");
+            Console.WriteLine("Press ENTER to start generating");
+            Console.ReadLine();
+            int index = 0;
+            bool stop = false;
+            while (!stop)
+            {
+                index++;
+                Random rand = new Random();
+                int i = rand.Next(names.Length);
+                Console.ForegroundColor = ConsoleColor.Red;
+                if (index > 250)
+                {
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("Girlfriend Found...");
+                    System.Threading.Thread.Sleep(1000);
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Random random = new Random();
+                    int randomNumber = random.Next(1000, 9999);
+                    Console.WriteLine($"{names[i]}#" + randomNumber);
+                    Console.WriteLine("Press ENTER to retry if the tag is not working.");
+                    Console.ReadLine();
+                    System.Threading.Thread.Sleep(1000);
+                    Console.Clear();
+                    System.Diagnostics.Process.Start(System.AppDomain.CurrentDomain.FriendlyName);
+
+                    Environment.Exit(0);
+                }
+                else
+                {
+
+                    Console.WriteLine($"{names[i]} " + "[taken]");
+                    System.Threading.Thread.Sleep(20);
+                }
+            }
+        }
+    }
+}
